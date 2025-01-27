@@ -1,0 +1,35 @@
+@import url("assets/fonts/fonts.css");
+@import url("styles/fw-presets.css");
+@import url("styles/fw-classes.css");
+@import url("styles/components.css");
+
+
+/*** VARIABLES */
+:root {
+
+    --pad-y-sec: 48px;
+    --pad-y-sec-sm: 24px;
+
+    --ff-text: "Raleway";
+    --ff-hd: var(--ff-text);
+
+    --fs-text: 16px;
+    --fs-text-sm: 14px;
+    --fs-text-lg: 22px;
+    --lh-text: 1.5;
+
+    --fs-h1: 40px;
+
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-bold: 600;
+
+    --fw-text: var(--fw-regular);
+    --fw-hd: var(--fw-bold);
+
+    --clr-text: white;
+    --clr-hd: black;
+    --bg-page: #333;
+}
+

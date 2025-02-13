@@ -1,5 +1,9 @@
 /***** FRAMEWORK UTILITY CLASSES */
 
+.grid-auto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--col-min-width), 100%), 1fr));
+}
 .flex-col {
     display: flex;
     flex-direction: column;
@@ -73,11 +77,6 @@
     display: none !important;
 }
 
-/*** TYPOGRAPHY */
-.uppercase {
-    text-transform: uppercase;
-}
-
 /*** IMAGES */
 .bg-img-cover {
     background-size: cover;
@@ -88,6 +87,11 @@
 }
 .img-contain {
     object-fit: contain;
+}
+
+/*** TYPOGRAPHY */
+.uppercase {
+    text-transform: uppercase;
 }
 
 
@@ -107,6 +111,22 @@
 }
 .pad-y-sec-xs {
     padding: var(--pad-y-sec-xs) var(--pad-y-sec-xs);
+}
+.pad-y{
+    padding-top: var(--sp-10);
+    padding-bottom: var(--sp-10);
+}
+.pad-y-05 {
+    padding-top: var(--sp-05);
+    padding-bottom: var(--sp-05);
+}
+.pad-y-10 {
+    padding-top: var(--sp-10);
+    padding-bottom: var(--sp-10);
+}
+.pad-y-20 {
+    padding-top: var(--sp-20);
+    padding-bottom: var(--sp-20);
 }
 
 /*** MARGIN TOP/BOTTOM */

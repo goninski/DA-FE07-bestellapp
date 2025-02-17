@@ -8,6 +8,9 @@
 /*** VARIABLES */
 :root {
 
+    --ct-w: 100%;
+    /* --px-sec: 24px; */
+
     --py-sec: 48px;
     --py-sec-sm: 24px;
     --py-sec-xs: 20px;
@@ -75,12 +78,12 @@ header, footer {
     height: 100px;
 }
 
-.restaurant-dish-items {
+.dish-item {
     /* background-color: blanchedalmond; */
     border: solid 1px #ddd;
     margin: var(--sp-05);
 }
-#restaurantDishItems {
+#DishItems {
     /* border: solid 1px #ddd; */
 }
 .btn-add-to-cart {
@@ -101,4 +104,11 @@ header, footer {
 #cartTotals {
     border-top: solid 1px #ccc;
     border-bottom: solid 1px #ccc;
+}
+
+
+@media(min-width: 1516px) {
+    :root {
+        --px-sec: 32px;
+    }
 }

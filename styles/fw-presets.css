@@ -16,7 +16,7 @@
     --sp-80: 120px;
     --sp-90: 150px;
 
-    --col-min-w: 300px;
+    --min-w-col: 300px;
     --icon-multipl: 1;
 
 }
@@ -29,7 +29,7 @@
 }
 @media(max-width: 511px) {
     :root {
-        --col-min-w: 280px;
+        --min-w-col: 280px;
     }
 }
 @media(max-width: 359px) {

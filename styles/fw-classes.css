@@ -2,7 +2,7 @@
 
 .grid-auto {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(var(--col-min-w), 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--min-w-col), 100%), 1fr));
 }
 .flex {
     display: flex;

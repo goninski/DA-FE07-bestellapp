@@ -4,13 +4,16 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(var(--col-min-w), 100%), 1fr));
 }
-.flex-col {
+.flex {
     display: flex;
-    flex-direction: column;
 }
 .flex-row {
     display: flex;
     flex-direction: row;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
 }
 .flex-row-reverse {
     display: flex;
@@ -56,19 +59,11 @@
 .fw {
     width: 100%;
 }
-.ct-width-full {
-    --width-ct: 100%;
+.ct-fw {
+    --ct-w: 100%;
 }
 .fvh-min {
     min-height: 100vh;
-}
-.mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-}
-.my-auto {
-    margin-top: auto;
-    margin-bottom: auto;
 }
 .text-center {
     text-align: center;
@@ -84,6 +79,7 @@
 }
 .img-cover {
     object-fit: cover;
+    /* object-position: center; */
 }
 .img-contain {
     object-fit: contain;
@@ -96,23 +92,24 @@
 
 
 
-
-
 /*** SECTION SPACING */
+.p-card {
+    padding: var(--p-card);
+}
 .px-sec {
-    padding-left: var(--pad-x-sec);
-    padding-right: var(--pad-x-sec);
+    padding-left: var(--px-sec);
+    padding-right: var(--px-sec);
 }
 .py-sec {
-    padding: var(--pad-y-sec) var(--pad-y-sec);
+    padding: var(--py-sec) var(--py-sec);
 }
 .py-sec-sm {
-    padding: var(--pad-y-sec-sm) var(--pad-y-sec-sm);
+    padding: var(--py-sec-sm) var(--py-sec-sm);
 }
 .py-sec-xs {
-    padding: var(--pad-y-sec-xs) var(--pad-y-sec-xs);
+    padding: var(--py-sec-xs) var(--py-sec-xs);
 }
-.py{
+.py {
     padding-top: var(--sp-10);
     padding-bottom: var(--sp-10);
 }
@@ -129,7 +126,19 @@
     padding-bottom: var(--sp-20);
 }
 
-/*** MARGIN TOP/BOTTOM */
+/*** MARGIN */
+.my-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+.my-0 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
 .mt {
     margin-top: var(--sp-10);
 }
@@ -202,6 +211,12 @@
 }
 .row-gap-20 {
     row-gap: var(--sp-20);
+}
+
+
+/*** POSITIONS */
+.pos-relative {
+    position: relative;
 }
 
 

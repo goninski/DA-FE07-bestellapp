@@ -83,7 +83,7 @@ footer {
     padding-top: var(--py-sec);
     padding-bottom: var(--py-sec);
 }
-.ct-container {
+.i-sec {
     display: flex;
     flex-direction: column;
     width: 100%;

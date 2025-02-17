@@ -10,6 +10,8 @@
 
     --py-sec: 48px;
     --py-sec-sm: 24px;
+    --py-sec-xs: 20px;
+    --p-card: 16px;
 
     --ff-text: "Raleway";
     --ff-hd: var(--ff-text);
@@ -17,6 +19,7 @@
     --fs-text: 16px;
     --fs-text-sm: 14px;
     --fs-text-lg: 22px;
+    --fs-text-xl: 28px;
     --lh-text: 1.5;
 
     --fs-h1: 40px;
@@ -30,11 +33,72 @@
     --fw-hd: var(--fw-bold);
 
     --clr-primary: orange;
-    --clr-text: white;
+    --clr-text: black;
     --clr-hd: black;
-    --bg-page: #333;
+    --bg-page: white;
 }
 
+.logo {
+    height: 66px;
+}
 header, footer {
     background-color: var(--clr-primary);
+}
+.restaurant-hero-img {
+    height: 240px;
+    background-image: url(assets/img/header-hero.jpg);
+}
+.header-logo-title {
+    /* font-size: var(--fs-text-lg); */
+}
+.restaurant-logo-link {
+    position: absolute;
+    top: -33px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.restaurant-review-summary {
+    color: var(--clr-primary);
+    font-weight: var(--fw-bold);
+}
+.restaurant-nav-bar {
+    background-color: #ddcc;
+}
+#restaurantDishCategories a:hover {
+    text-decoration: underline;
+}
+.restaurant-category-img {
+    background-image: url(assets/img/header-hero.jpg);
+    margin: var(--sp-05);
+    height: 100px;
+}
+
+.restaurant-dish-items {
+    /* background-color: blanchedalmond; */
+    border: solid 1px #ddd;
+    margin: var(--sp-05);
+}
+#restaurantDishItems {
+    /* border: solid 1px #ddd; */
+}
+.btn-add-to-cart {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: solid 1px var(--clr-primary);
+    padding: var(--sp-05);
+}
+
+.cart {
+    background-color: #eee;
+    width: 320px;
+}
+#cartItems {
+    border-top: solid 1px #ccc;
+}
+#cartTotals {
+    border-top: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
 }

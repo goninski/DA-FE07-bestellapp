@@ -14,29 +14,84 @@
 <body onload="init()">
 
     <header class="section">
-       <div class="ct-container pad-y-20">
-            <div class="logo-wrapper flex-row gap align-center">
-                <a href="#"><img src="assets/img/logo-goninski.png" alt="logo-goninski" class="logo-goninski"></a>
-                <div class="logo-text flex">
-                    <h1>Header Title</h1>
-                    <p class="m-y-0">Header Subtitle</p>
-                </div>
-            </div>
-       </div>
+        <div class="header-top-bar i-sec flex-row py-05">
+            <a href="#"><img src="assets/icons/logo/logo.svg" alt="logo" class="logo"></a>
+        </div>
     </header>
 
-    <main>
-        <section>
-            <div class="ct-container grid-auto gap-20">
+
+    <div class="flex-row flex-grow">
+
+        <main class="flex-col flex-grow">
+            <section class="restaurant-header seamless">
+                <div class="restaurant-hero-img bg-img-cover"></div>
+                <div class="restaurant-hero-text i-sec px-sec flex-col pos-relative py-10">
+                    <a href="#" class="restaurant-logo-link"><img src="assets/img/logo-goninski.png" alt="logo" class="logo"></a>
+                    <h1 class="restaurant-logo-title">Paradise Noodles</h1>
+                    <div class="restaurant-review-summary">Bewertung 4.2 von 5 Sternen</h1>
+                </div>
+            </section>
+            <section class="restaurant-nav-bar seamless-y py-10">
+                <div id="restaurantDishCategories" class="i-sec flex-row gap">
+                    <a href="#main">Hauptgerichte</a>
+                    <a href="#sides">Beilagen</a>
+                </div>
+            </section>
+            <section class="restaurant-category-wrapper seamless">
+                <div class="restaurant-category-img bg-img-cover pos-relative"></div>
+                <div class="i-sec px-sec">
+                    <h2>Hauptgerichte</h2>
+                </div>
+            </section>
+            <section class="restaurant-dish-items seamless-y py-10 pos-relative">
+                <div id="restaurantDishItems" class="xpos-relative">
+                    <div class="dishItem flex-col gap-05 xpos-relative">
+                        <h3 class="dish-title">Pizza Casanova</h3>
+                        <div class="dish-description">blablabla</div>
+                        <div class="dish-price">8.50€</div>
+                        <button class="btn-add-to-cart" onclick="addToCart">+</button>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+
+        <div id="cart" class="cart flex-col p-card">
+            <h2 class="mb-10 text-center">Warenkorb</h3>
+            <div id="cartItems" class="py-10">
+                <div id="cartItem-xx" class="cart-item">
+                    <h4 class="cart-item-name">Pizza Diavolo</h4>
+                    <div class="cart-item-metas flex-row gap-10 justify-between mt-05">
+                        <div class="cart-items-qty flex-row gap-10">
+                            <button class="cart-btn-minus" onclick="reduceItemQty">-</button>
+                            <div class="cart-item-qty">3x</div>
+                            <button class="cart-btn-plus" onclick="addItemQty">+</button>
+                        </div>
+                        <div class="cart-item-price-total">25.50€</div>
+                        <button class="cart-btn-remove" onclick="removeCartItem"><img src="assets/icons/google-delete.svg" alt="trash-icon"></button>
+                    </div>
+                </div>
             </div>
-            
-        </section>
+            <div id="cartTotals" class="flex-col gap-05 py-10">
+                <div id="cartSubTotal" class="flex-row justify-between">
+                    <div>Zwischensumme</div><div>115.80€</div>
+                </div>
+                <div id="cartShipCost" class="flex-row justify-between">
+                    <div>Lieferkosten</div><div>5.00€</div>
+                </div>
+                <div id="cartTotal" class="flex-row justify-between">
+                    <div>Gesamtkosten</div><div>120.80€</div>
+                </div>
+            </div>
+        </div>
 
-    </main>
+    </div>
 
-    <footer class="section pad-y-10">
-        <div class="ct-container">
-            Testproject DA Frontend Masterclass&nbsp;| xx 2025 (in progress)
+
+    <footer class="section py-10">
+        <div class="i-sec">
+            Abschlussprojekt Modul 7, DA Frontend Masterclass&nbsp;| Feb 2025 (in progress)
             <div class="footer-links flex-row gap align-center mt-05">
                 <a href="https://github.com/goninski/" target="_blank">visit on GitHub</a>
                 <a href="/">Projects</a>

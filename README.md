@@ -1,1 +1,9 @@
-my (beginner) starter dev template
+Month Year
+
+a JS test project in context of the DA frontend masterclass
+
+description...
+
+Features:
+- ...
+- ...

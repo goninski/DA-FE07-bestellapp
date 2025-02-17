@@ -2,8 +2,8 @@
 
 /*** VARIABLES */
 :root {
-    --width-ct: 1440px;
-    --pad-x-sec: 4vw;
+    --ct-w: 1440px;
+    --px-sec: 4vw;
 
     --sp-05: 12px;
     --sp-10: 24px;
@@ -16,7 +16,7 @@
     --sp-80: 120px;
     --sp-90: 150px;
 
-    --col-min-width: 300px;
+    --col-min-w: 300px;
     --icon-multipl: 1;
 
 }
@@ -24,22 +24,22 @@
 }
 @media(max-width: 719px) {
     :root {
-        --pad-x-sec: 24px;
+        --px-sec: 24px;
     }
 }
 @media(max-width: 511px) {
     :root {
-        --col-min-width: 280px;
+        --col-min-w: 280px;
     }
 }
 @media(max-width: 359px) {
     :root {
-        --pad-x-sec: 20px;
+        --px-sec: 20px;
     }
 }
 @media(min-width: 1516px) {
     :root {
-        --pad-x-sec: 64px;
+        --px-sec: 64px;
     }
 }
 
@@ -56,6 +56,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    min-height: 100svh;
     position: relative;
     font-family: var(--ff-text);
     font-size: var(--fs-text);
@@ -75,18 +76,18 @@ footer {
     width: 100%;
 }
 :where(section, .section):not(.seamless-x, .seamless) {
-    padding-left: var(--pad-x-sec);
-    padding-right: var(--pad-x-sec);
+    padding-left: var(--px-sec);
+    padding-right: var(--px-sec);
 }
 :where(section, .section):not(.seamless-y, .seamless, header, footer) {
-    padding-top: var(--pad-y-sec);
-    padding-bottom: var(--pad-y-sec);
+    padding-top: var(--py-sec);
+    padding-bottom: var(--py-sec);
 }
 .ct-container {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: var(--width-ct);
+    max-width: var(--ct-w);
     margin-left: auto;
     margin-right: auto;
 }

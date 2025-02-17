@@ -4,41 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
     <link rel="stylesheet" href="style.css">
+    <script src="scripts/data.js"></script>
     <script src="scripts/templates.js"></script>
     <script src="script.js"></script>
-    <title>Projekte</title>
 </head>
 
-<body>
+<body onload="init()">
 
-    <header>
-       
+    <header class="section">
+       <div class="ct-container pad-y-20">
+            <div class="logo-wrapper flex-row gap align-center">
+                <a href="#"><img src="assets/img/logo-goninski.png" alt="logo-goninski" class="logo-goninski"></a>
+                <div class="logo-text flex">
+                    <h1>Header Title</h1>
+                    <p class="m-y-0">Header Subtitle</p>
+                </div>
+            </div>
+       </div>
     </header>
 
-
     <main>
-
         <section>
-
-            <div class="ct-container">
-
-                <h1>Projekte | François Gonin</h1>
-
-                <ul>
-                    <li><a href="/Notizblock/" target="_blank">2025-01 | Notizblock</a></li>
-                    <li><a href="/fotogram/" target="_blank">2024-10 | Fotogram</a></li>
-                    <li><a href="/kochwelt/" target="_blank">2024-10 | Kochwelt</a></li>
-                    <li><a href="/sakura-ramen/" target="_blank">2024-09 | Sakura Ramen</a></li>
-                    <li><a href="/band-website/" target="_blank">2024-09 | Band Website</a></li>
-                </ul>
-
+            <div class="ct-container grid-auto gap-20">
             </div>
             
         </section>
 
     </main>
 
+    <footer class="section pad-y-10">
+        <div class="ct-container">
+            Testproject DA Frontend Masterclass&nbsp;| xx 2025 (in progress)
+            <div class="footer-links flex-row gap align-center mt-05">
+                <a href="https://github.com/goninski/" target="_blank">visit on GitHub</a>
+                <a href="/">Projects</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 

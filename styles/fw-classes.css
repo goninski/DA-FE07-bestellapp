@@ -2,7 +2,7 @@
 
 .grid-auto {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(var(--col-min-width), 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--col-min-w), 100%), 1fr));
 }
 .flex-col {
     display: flex;
@@ -53,20 +53,20 @@
 .flex-grow {
     flex-grow: 1;
 }
-.full-width {
+.fw {
     width: 100%;
 }
 .ct-width-full {
     --width-ct: 100%;
 }
-.full-height {
+.fvh-min {
     min-height: 100vh;
 }
-.margin-x-auto {
+.mx-auto {
     margin-left: auto;
     margin-right: auto;
 }
-.margin-y-auto {
+.my-auto {
     margin-top: auto;
     margin-bottom: auto;
 }
@@ -99,32 +99,32 @@
 
 
 /*** SECTION SPACING */
-.pad-x-sec {
+.px-sec {
     padding-left: var(--pad-x-sec);
     padding-right: var(--pad-x-sec);
 }
-.pad-y-sec {
+.py-sec {
     padding: var(--pad-y-sec) var(--pad-y-sec);
 }
-.pad-y-sec-sm {
+.py-sec-sm {
     padding: var(--pad-y-sec-sm) var(--pad-y-sec-sm);
 }
-.pad-y-sec-xs {
+.py-sec-xs {
     padding: var(--pad-y-sec-xs) var(--pad-y-sec-xs);
 }
-.pad-y{
+.py{
     padding-top: var(--sp-10);
     padding-bottom: var(--sp-10);
 }
-.pad-y-05 {
+.py-05 {
     padding-top: var(--sp-05);
     padding-bottom: var(--sp-05);
 }
-.pad-y-10 {
+.py-10 {
     padding-top: var(--sp-10);
     padding-bottom: var(--sp-10);
 }
-.pad-y-20 {
+.py-20 {
     padding-top: var(--sp-20);
     padding-bottom: var(--sp-20);
 }

@@ -1,14 +1,15 @@
 @import url("assets/fonts/fonts.css");
 @import url("styles/fw-presets.css");
 @import url("styles/fw-classes.css");
+/*@import url("node_modules\bootstrap\dist\css\bootstrap.min.css");*/
 @import url("styles/assets.css");
 
 
 /*** VARIABLES */
 :root {
 
-    --pad-y-sec: 48px;
-    --pad-y-sec-sm: 24px;
+    --py-sec: 48px;
+    --py-sec-sm: 24px;
 
     --ff-text: "Raleway";
     --ff-hd: var(--ff-text);
@@ -28,8 +29,12 @@
     --fw-text: var(--fw-regular);
     --fw-hd: var(--fw-bold);
 
+    --clr-primary: orange;
     --clr-text: white;
     --clr-hd: black;
     --bg-page: #333;
 }
 
+header, footer {
+    background-color: var(--clr-primary);
+}

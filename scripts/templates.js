@@ -12,21 +12,37 @@ function getDishesTemplate() {
 
 function getCartItemsTemplate(cartItemIndex) {
     return `
-        <div id="cartItem-xx" class="cart-item mb">
+        <div id="cartItem-${cartItemIndex}" class="cart-item mb">
             <h4 class="cart-item-name">${cartItemName}</h4>
             <div class="cart-item-metas flex-row gap-10 justify-between mt-05">
                 <div class="cart-items-qty flex-row gap-10">
-                    <button class="cart-btn-minus" onclick="reduceItemQty()">-</button>
-                    <div class="cart-item-qty">${cartItemQty}</div>
-                    <button class="cart-btn-plus" onclick="addItemQty()">+</button>
+                    <button class="cart-btn-qty" onclick="addCartItemQty(-1, ${cartItemIndex})">-</button>
+                    <div id="cartItemQty-${cartItemIndex}" class="cart-item-qty">1</div>
+                    <button class="cart-btn-qty" onclick="addCartItemQty(1, ${cartItemIndex})">+</button>
                 </div>
-                <div class="cart-item-price-total">${cartItemPriceTotStr} €</div>
+                <div id="cartItemPriceTotal-${cartItemIndex}" class="cart-item-price-total">${cartItemPriceTotStr} €</div>
                 <button class="cart-btn-remove" onclick="removeFromCart(${cartItemIndex})"><img src="assets/icons/google-delete.svg" alt="trash-icon"></button>
             </div>
         </div>
     `;
 }
 
+// function getCartItemsTemplate(cartItemIndex) {
+//     return `
+//         <div id="cartItem-${cartItemIndex}" class="cart-item mb">
+//             <h4 class="cart-item-name">${cartItemName}</h4>
+//             <div class="cart-item-metas flex-row gap-10 justify-between mt-05">
+//                 <div class="cart-items-qty flex-row gap-10">
+//                     <button class="cart-btn-qty" onclick="addCartItemQty(-1, ${cartItemIndex})">-</button>
+//                     <div id="cartItemQty-${cartItemIndex}" class="cart-item-qty">${cartItemQty}</div>
+//                     <button class="cart-btn-qty" onclick="addCartItemQty(1, ${cartItemIndex})">+</button>
+//                 </div>
+//                 <div id="cartItemPrice-${cartItemIndex}" class="cart-item-price-total">${cartItemPriceTotStr} €</div>
+//                 <button class="cart-btn-remove" onclick="removeFromCart(${cartItemIndex})"><img src="assets/icons/google-delete.svg" alt="trash-icon"></button>
+//             </div>
+//         </div>
+//     `;
+// }
 
 function getCartTotalsTemplate() {
     return `

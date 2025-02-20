@@ -38,7 +38,7 @@ function renderCart() {
     let cartRef = document.getElementById('cart');
     cartRef.dataset.items = cartItems.length;
     renderCartItems();    
-    renderCartTotals(cartItems);    
+    renderCartTotals();    
 }
 
 function renderCartItems() {
@@ -55,10 +55,8 @@ function renderCartItems() {
     }
 }
 
-function renderCartTotals(cartItems) {
-    if(cartItems.length <= 0) {
-        // location.reload();
-    } else {
+function renderCartTotals() {
+    if(cartItems.length > 0) {
         let cartTotalsRef = document.getElementById('cartTotals');
         updateCartTotals(cartItems);
         cartTotalsRef.innerHTML = getCartTotalsTemplate();

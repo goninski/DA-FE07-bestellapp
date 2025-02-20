@@ -24,7 +24,7 @@ function init() {
 }
 
 function renderDishes() {
-    let dishItemsRef = document.getElementById('dishItems');
+    let dishItemsRef = document.getElementById('dishItemsMain');
     dishItemsRef.innerHTML = '';
     for (dishIndex = 0; dishIndex < dishes.length; dishIndex++) {
         dishName = dishes[dishIndex].name;

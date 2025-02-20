@@ -12,7 +12,7 @@ let cartItemPrice = 0;
 let cartItemPriceTot = 0;
 let cartItemPriceTotStr = '';
 let cartSubtotal = 0;
-let cartShipCost = 0;
+let cartShipCost = 5;
 let cartTotal = 0;
 let cartSubtotalStr = '';
 let cartShipCostStr = '';
@@ -88,6 +88,16 @@ function updateCartItemQty(qty, cartItemIndex) {
     renderCart();
 }
 
+function togglePickUp() {
+    let inputPickUpRef = document.getElementById('inputPickUp');
+    if(inputPickUpRef.checked == true) {
+        cartShipCost = 0;
+    } else {
+        cartShipCost = 5;
+    }
+    renderCartTotals();
+}
+
 function getDishIndexFromCartItem(cartItemIndex) {
     cartItemID = cartItems[cartItemIndex];
     dishIndex = dishes.findIndex(element => element.id == cartItemID);
@@ -108,7 +118,6 @@ function updateCartItemValues(dishIndex, remove = false) {
 
 function updateCartTotals(cartItems) {
     cartSubtotal = 0;
-    cartShipCost = 0;
     for (cartItemIndex = 0; cartItemIndex < cartItems.length; cartItemIndex++) {
         dishIndex = getDishIndexFromCartItem(cartItemIndex);
         cartSubtotal = cartSubtotal + dishes[dishIndex].cartValue;

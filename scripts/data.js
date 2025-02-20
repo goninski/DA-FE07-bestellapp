@@ -45,7 +45,7 @@ let dishes = [
         "cartValue": 0
     },
     {
-        "id": "1005",
+        "id": "2001",
         "category": "side",
         "name": "Röstikroketten",
         "description": "knusprige Kroketten aus frischen Kartoffeln",

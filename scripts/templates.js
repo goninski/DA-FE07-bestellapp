@@ -9,24 +9,6 @@ function getDishesTemplate() {
     `;
 }
 
-
-// function getCartItemsTemplate(cartItemIndex) {
-//     return `
-//         <div id="cartItem-${cartItemIndex}" class="cart-item mb">
-//             <h4 class="cart-item-name">${cartItemName}</h4>
-//             <div class="cart-item-metas flex-row gap-10 justify-between mt-05">
-//                 <div class="cart-items-qty flex-row gap-10">
-//                     <button class="cart-btn-qty" onclick="addCartItemQty(-1, ${cartItemIndex})">-</button>
-//                     <div id="cartItemQty-${cartItemIndex}" class="cart-item-qty">1</div>
-//                     <button class="cart-btn-qty" onclick="addCartItemQty(1, ${cartItemIndex})">+</button>
-//                 </div>
-//                 <div id="cartItemPriceTotal-${cartItemIndex}" class="cart-item-price-total">${cartItemPriceTotStr} €</div>
-//                 <button class="cart-btn-remove" onclick="removeFromCart(${cartItemIndex})"><img src="assets/icons/google-delete.svg" alt="trash-icon"></button>
-//             </div>
-//         </div>
-//     `;
-// }
-
 function getCartItemsTemplate(cartItemIndex) {
     return `
         <div id="cartItem-${cartItemIndex}" class="cart-item mb">
@@ -48,11 +30,11 @@ function getCartTotalsTemplate() {
     return `
     <div id="cartSubTotal" class="flex-row justify-between">
         <div>Zwischensumme</div><div>${cartSubtotalStr} €</div>
-        </div>
-        <div id="cartShipCost" class="flex-row justify-between">
+    </div>
+    <div id="cartShipCost" class="flex-row justify-between">
         <div>Lieferkosten</div><div>${cartShipCostStr} €</div>
-        </div>
-        <div id="cartTotal" class="flex-row justify-between">
+    </div>
+    <div id="cartTotal" class="flex-row justify-between">
         <div>Gesamtkosten</div><div>${cartTotalStr} €</div>
     </div>
     `;

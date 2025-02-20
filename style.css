@@ -102,10 +102,10 @@ header, footer {
     height: 100%;
     min-height: 100svh;
 }
-.cart[data-items="0"] #cartTotals {
+.cart[data-items="0"] :is(#cartTotals, #cartOptions) {
     display: none !important;
 }
-.cart:not([data-items="0"]) #cartEmpty {
+.cart:not([data-items="0"]) :is(#cartEmpty) {
     display: none !important;
 }
 #cartItems {
@@ -117,6 +117,9 @@ header, footer {
 #cartTotals {
     border-top: solid 1px #ccc;
     border-bottom: solid 1px #ccc;
+}
+#cartOptions {
+    margin-top: 16px;
 }
 
 

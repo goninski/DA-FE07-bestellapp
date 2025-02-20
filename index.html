@@ -49,33 +49,11 @@
         </main>
 
 
-        <div id="cart" class="cart flex-col p-card">
-            <h2 class="mb-10 text-center">Warenkorb</h3>
-            <div id="cartItems" class="py-10">
-                <!-- <div id="cartItem-xx" class="cart-item">
-                    <h4 class="cart-item-name">Pizza Diavolo</h4>
-                    <div class="cart-item-metas flex-row gap-10 justify-between mt-05">
-                        <div class="cart-items-qty flex-row gap-10">
-                            <button class="cart-btn-minus" onclick="reduceItemQty()">-</button>
-                            <div class="cart-item-qty">3x</div>
-                            <button class="cart-btn-plus" onclick="addItemQty()">+</button>
-                        </div>
-                        <div class="cart-item-price-total">25.50€</div>
-                        <button class="cart-btn-remove" onclick="removeFromCart(dishIndex)"><img src="assets/icons/google-delete.svg" alt="trash-icon"></button>
-                    </div>
-                </div> -->
-            </div>
-            <div id="cartTotals" class="flex-col gap-05 py-10">
-                <!-- <div id="cartSubTotal" class="flex-row justify-between">
-                    <div>Zwischensumme</div><div>115.80€</div>
-                </div>
-                <div id="cartShipCost" class="flex-row justify-between">
-                    <div>Lieferkosten</div><div>5.00€</div>
-                </div>
-                <div id="cartTotal" class="flex-row justify-between">
-                    <div>Gesamtkosten</div><div>120.80€</div>
-                </div> -->
-            </div>
+        <div id="cart" class="cart flex-col p-card" data-items="0">
+            <h2 class="mb-05 text-center">Warenkorb</h3>
+            <div id="cartItems" class="mt-05 py-10"></div>
+            <div id="cartEmpty" class="mb-30 text-center">Der Warenkorb ist leer</div>
+            <div id="cartTotals" class="flex-col gap-05 py-10"></div>
         </div>
 
     </div>

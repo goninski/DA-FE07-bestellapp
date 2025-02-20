@@ -9,7 +9,7 @@ let cartItems = [];
 let cartItemIndex = 0;
 let cartItemID = '';
 let cartItemName = '';
-let cartItemQty = 1;
+let cartItemQty = 0;
 let cartItemPrice = 0;
 let cartItemPriceTot = 0;
 let cartItemPriceTotStr = '';
@@ -37,8 +37,9 @@ function renderDishes() {
 }
 
 function renderCart() {
+    let cartRef = document.getElementById('cart');
+    cartRef.dataset.items = cartItems.length;
     renderCartItems();    
-    renderCartTotals();    
 }
 
 function renderCartItems() {
@@ -47,8 +48,7 @@ function renderCartItems() {
     for (cartItemIndex = 0; cartItemIndex < cartItems.length; cartItemIndex++) {
         dishIndex = getDishIndexFromCartItem(cartItemIndex);
         if(dishIndex >= 0) {
-            cartItemName = dishes[dishIndex].name;
-            cartItemPriceTotStr = dishes[dishIndex].price.toFixed(2);
+            setCartItemValues(dishIndex);
             if(cartItemQty > 0) {
                 cartItemsRef.innerHTML += getCartItemsTemplate(cartItemIndex);       
             }
@@ -62,25 +62,16 @@ function getDishIndexFromCartItem(cartItemIndex) {
     return dishIndex;
 }
 
-// function getDishMetasFromCartItem(dishIndex) {
-//     cartItemName = dishes[dishIndex].name;
-//     cartItemQty = dishes[dishIndex].cartQty;
-//     cartItemPrice = dishes[dishIndex].price;
-//     cartItemPriceTot = (cartItemQty * cartItemPrice)
-//     cartItemPriceTotStr = (cartItemQty * cartItemPrice).toFixed(2);
-//     dishes[dishIndex].cartValue = cartItemPriceTot;
-//     updateCartTotals(cartItemPrice);
-// }
-
-function addCartItemQty(qty, cartItemIndex) {
-    dishIndex = getDishIndexFromCartItem(cartItemIndex);
-    dishes[dishIndex].cartQty = dishes[dishIndex].cartQty + qty;
+function setCartItemValues(dishIndex, remove = false) {
+    cartItemName = dishes[dishIndex].name;
     cartItemQty = dishes[dishIndex].cartQty;
-    cartItemQty = checkCartItemQtyRange(dishIndex, cartItemQty);
+    if(! remove) {
+        cartItemQty = checkCartItemQtyRange(dishIndex, cartItemQty);
+    }
     cartItemPrice = dishes[dishIndex].price;
     cartItemPriceTot = (cartItemQty * cartItemPrice)
     cartItemPriceTotStr = (cartItemQty * cartItemPrice).toFixed(2);
-    updateCartItem(cartItemIndex, cartItemQty, cartItemPriceTotStr);
+    console.log(cartItemName + ': ' + cartItemQty + 'x ='+ cartItemPriceTotStr);
 }
 
 function checkCartItemQtyRange(dishIndex, cartItemQty) {
@@ -95,12 +86,36 @@ function checkCartItemQtyRange(dishIndex, cartItemQty) {
     return dishes[dishIndex].cartQty = cartItemQty;
 }
 
-function updateCartItem(cartItemIndex, cartItemQty, cartItemPriceTotStr) {
-    let cartItemQtyRef = document.getElementById('cartItemQty-' + cartItemIndex);
-    cartItemQtyRef.innerHTML = cartItemQty;
-    let cartItemPriceTotalRef = document.getElementById('cartItemPriceTotal-' + cartItemIndex);
-    cartItemPriceTotalRef.innerHTML = cartItemPriceTotStr;
+function addToCart(dishIndex) {
+    dishID = dishes[dishIndex].id;
+    cartItemIndex = cartItems.indexOf(dishID);
+    if( cartItemIndex < 0 ) {
+        cartItems.push(dishID);
+    }
+    cartItemIndex = cartItems.indexOf(dishID);
+    addCartItemQty(1, cartItemIndex);
+    // renderCart();
 }
+
+function removeFromCart(cartItemIndex) {
+    dishIndex = getDishIndexFromCartItem(cartItemIndex);
+    dishes[dishIndex].cartQty = 0;
+    cartItems.splice(cartItemIndex, 1);
+    renderCart();
+}
+
+function addCartItemQty(qty, cartItemIndex) {
+    dishIndex = getDishIndexFromCartItem(cartItemIndex);
+    dishes[dishIndex].cartQty = dishes[dishIndex].cartQty + qty;
+    renderCart();
+}
+
+// function updateCartItem(cartItemIndex) {
+//     let cartItemQtyRef = document.getElementById('cartItemQty-' + cartItemIndex);
+//     cartItemQtyRef.innerHTML = cartItemQty;
+//     let cartItemPriceTotalRef = document.getElementById('cartItemPriceTotal-' + cartItemIndex);
+//     cartItemPriceTotalRef.innerHTML = cartItemPriceTotStr;
+// }
 
 function updateCartTotals(cartItemPrice) {
     cartSubtotal = cartSubtotal + cartItemPrice;
@@ -116,19 +131,5 @@ function renderCartTotals() {
     cartTotalsRef.innerHTML = getCartTotalsTemplate();
 }
 
-function addToCart(dishIndex) {
-    dishID = dishes[dishIndex].id;
-    dishes[dishIndex].cartQty++;
-    if( ! cartItems.includes(dishID) ) {
-        cartItems.push(dishID);
-    }
-    renderCart();
-}
 
-function removeFromCart(cartItemIndex) {
-    dishIndex = getDishIndexFromCartItem(cartItemIndex);
-    dishes[dishIndex].cartQty = 0;
-    cartItems.splice(cartItemIndex, 1);
-    renderCart();
-}
 

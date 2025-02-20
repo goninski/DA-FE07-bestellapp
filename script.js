@@ -19,17 +19,36 @@ let cartShipCostStr = '';
 let cartTotalStr = '';
 
 function init() {
-    renderDishes();
+    renderDishesPerCategory();
     renderCart();
 }
 
-function renderDishes() {
-    let dishItemsRef = document.getElementById('dishItemsMain');
+function renderDishesPerCategory() {
+    for (let catIndex = 0; catIndex < categories.length; catIndex++) {
+        let category = categories[catIndex].anker;
+        let filtDishes = dishes.filter((dish) => {
+            return dish.category == category;
+        });
+        renderCategoryMetas(catIndex, category);
+        renderDishItems(filtDishes, category);
+    }
+}
+
+function renderCategoryMetas(catIndex, category) {
+    let catTitle = categories[catIndex].name;
+    document.getElementById('navItem_' + category).innerHTML = catTitle;
+    document.getElementById('navItem_' + category).href = '#' + category;
+    document.getElementById('catTitle_' + category).innerHTML = catTitle;
+}
+
+function renderDishItems(filtDishes, category) {
+    let dishItemsRef = document.getElementById('dishItems_' + category);
     dishItemsRef.innerHTML = '';
-    for (dishIndex = 0; dishIndex < dishes.length; dishIndex++) {
-        dishName = dishes[dishIndex].name;
-        dishDescription = dishes[dishIndex].description;
-        dishPrice = dishes[dishIndex].price.toFixed(2);
+    for (dishIndex = 0; dishIndex < filtDishes.length; dishIndex++) {
+        dishID = filtDishes[dishIndex].id;
+        dishName = filtDishes[dishIndex].name;
+        dishDescription = filtDishes[dishIndex].description;
+        dishPrice = filtDishes[dishIndex].price.toFixed(2);
         dishItemsRef.innerHTML += getDishesTemplate();       
     }
 }
@@ -63,8 +82,7 @@ function renderCartTotals() {
     }
 }
 
-function addToCart(dishIndex) {
-    dishID = dishes[dishIndex].id;
+function addToCart(dishID) {
     cartItemIndex = cartItems.indexOf(dishID);
     if( cartItemIndex < 0 ) {
         cartItems.push(dishID);
@@ -98,9 +116,14 @@ function togglePickUp() {
     renderCartTotals();
 }
 
+function getDishIndexFromID(dishID) {
+    dishIndex = dishes.findIndex(dish => dish.id == dishID);
+    return dishIndex;
+}
+
 function getDishIndexFromCartItem(cartItemIndex) {
     cartItemID = cartItems[cartItemIndex];
-    dishIndex = dishes.findIndex(element => element.id == cartItemID);
+    dishIndex = dishes.findIndex(dish => dish.id == cartItemID);
     return dishIndex;
 }
 

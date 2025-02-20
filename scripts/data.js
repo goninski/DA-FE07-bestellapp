@@ -1,3 +1,14 @@
+let categories = [
+    {
+        "anker": "main",
+        "name": "Hauptgerichte"
+    },
+    {
+        "anker": "side",
+        "name": "Beilagen"
+    }
+];
+
 let dishes = [
     {
         "id": "1001",

@@ -69,10 +69,10 @@ header, footer {
 .restaurant-nav-bar {
     background-color: #ddcc;
 }
-#restaurantDishCategories a:hover {
+#categoryNav a:hover {
     text-decoration: underline;
 }
-.restaurant-category-img {
+.dishes-category-img {
     background-image: url(assets/img/header-hero.jpg);
     margin: var(--sp-05);
     height: 100px;

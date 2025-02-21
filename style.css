@@ -105,9 +105,9 @@ header, footer {
 .cart[data-items="0"] :is(#cartTotals, #cartOptions, .order-btn, .empty-cart-btn) {
     display: none !important;
 }
-.cart:not([data-items="0"]) :is(#cartEmpty) {
+/* .cart:not([data-items="0"]) :is(#cartEmpty) {
     display: none !important;
-}
+} */
 #cartItems {
     border-top: solid 1px #ccc;
 }

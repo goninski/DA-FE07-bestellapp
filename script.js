@@ -54,8 +54,16 @@ function renderDishItems(filtDishes, category) {
 }
 
 function renderCart() {
+    let cartEmpty = document.getElementById('cartEmpty');
     let cartRef = document.getElementById('cart');
     cartRef.dataset.items = cartItems.length;
+    if(cartItems.length <= 0) {
+        cartEmpty.style = '';
+    } else {
+        cartEmpty.style = 'display: none;';
+        let orderConfirmationRef = document.getElementById('orderConfirmation');
+        orderConfirmationRef.style = 'display: none;';
+    }
     renderCartItems();    
     renderCartTotals();    
 }
@@ -105,16 +113,16 @@ function emptyCart() {
     for (let dishIndex = 0; dishIndex < dishes.length; dishIndex++) {
         dishes[dishIndex].cartQty = 0;
         dishes[dishIndex].cartValue = 0;
-        renderCart();
+            renderCart();
     }
 }
 
 function confirmOrder() {
-    let orderConfirmationRef = document.getElementById('orderConfirmation');
-    let cartEmpty = document.getElementById('cartEmpty');
-    orderConfirmationRef.style = '';
-    cartEmpty.style = 'display: none';
     emptyCart();
+    let orderConfirmationRef = document.getElementById('orderConfirmation');
+    orderConfirmationRef.style = '';
+    let cartEmpty = document.getElementById('cartEmpty');
+    cartEmpty.style = 'display: none';
 }
 
 function updateCartItemQty(qty, cartItemIndex) {

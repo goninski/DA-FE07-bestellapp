@@ -102,7 +102,7 @@ header, footer {
     height: 100%;
     min-height: 100svh;
 }
-.cart[data-items="0"] :is(#cartTotals, #cartOptions) {
+.cart[data-items="0"] :is(#cartTotals, #cartOptions, .order-btn, .empty-cart-btn) {
     display: none !important;
 }
 .cart:not([data-items="0"]) :is(#cartEmpty) {

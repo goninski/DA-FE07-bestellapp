@@ -49,7 +49,7 @@
                         <div id="dishItems_main" class=""></div>
                     </div>
                 </section>
-                <section id="sides" class="dishes-category-wrapper seamless">
+                <section id="side" class="dishes-category-wrapper seamless">
                     <div class="dishes-category-img bg-img-cover pos-relative"></div>
                     <div class="i-sec px-sec">
                         <h2 id="catTitle_side">Beilagen</h2>
@@ -70,7 +70,12 @@
                 <input id="inputPickUp" name="inputPickUp" type="checkbox" onclick="togglePickUp()"/>
                 <label for="inputPickUp" class="fs-text-sm">Abholung</label>
             </div>
-            
+            <button type="submit" class="order-btn btn btn-default mt" onclick="confirmOrder()">Bestellung übermitteln</button>            
+            <button class="empty-cart-btn btn btn-default mt" onclick="emptyCart()">Warenkorb leeren</button>
+            <div id="orderConfirmation" class="order-confirmation flex-col text-center" style="display: none;">
+                <b>Vielen Dank</b>
+                Wir haben deine Testbestellung erhalten.
+            </div>            
         </div>
 
     </div>

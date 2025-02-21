@@ -100,6 +100,23 @@ function removeFromCart(cartItemIndex) {
     renderCart();
 }
 
+function emptyCart() {
+    cartItems = [];
+    for (let dishIndex = 0; dishIndex < dishes.length; dishIndex++) {
+        dishes[dishIndex].cartQty = 0;
+        dishes[dishIndex].cartValue = 0;
+        renderCart();
+    }
+}
+
+function confirmOrder() {
+    let orderConfirmationRef = document.getElementById('orderConfirmation');
+    let cartEmpty = document.getElementById('cartEmpty');
+    orderConfirmationRef.style = '';
+    cartEmpty.style = 'display: none';
+    emptyCart();
+}
+
 function updateCartItemQty(qty, cartItemIndex) {
     dishIndex = getDishIndexFromCartItem(cartItemIndex);
     dishes[dishIndex].cartQty = dishes[dishIndex].cartQty + qty;

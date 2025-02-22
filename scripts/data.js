@@ -2,17 +2,17 @@ let categories = [
     {
         "id": "pizza",
         "name": "Pizza",
-        "url": "#pizza",
+        "url": "pizza",
     },
     {
         "id": "salad",
         "name": "Salate",
-        "url": "#salate",
+        "url": "salate",
     },
     {
         "id": "dessert",
         "name": "Desserts",
-        "url": "#desserts",
+        "url": "desserts",
     }
 ];
 

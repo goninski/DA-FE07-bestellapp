@@ -1,10 +1,24 @@
 function getCategoryNavTemplate(catName, catURL) {
     return `
-        <a href="${catURL}">${catName}</a>
+        <a href="#${catURL}">${catName}</a>
     `;
 }
 
-function getDishesTemplate() {
+
+function getDishesTemplate(category, catName, catURL) {
+    return `
+        <section id="${catURL}" class="dishes-category-wrapper seamless-y">
+        <div class="i-sec flex-col gap py-20">
+            <div class="dishes-category-img bg-img-cover pos-relative overlay-before" style="background-image: url(assets/img/${category}.jpg)">
+                <h2>${catName}</h2>
+            </div>
+            <div id="dishItems_${category}" class="flex-col gap-05"></div>
+        </div>
+        </section>
+    `;    
+}
+
+function getDishItemsTemplate() {
     return `
         <div class="dish-item flex-col gap-05 pos-relative">
             <h3 class="dish-title">${dishName}</h3>

@@ -43,11 +43,11 @@
     --clr-button-hover: var(--clr-primary-hover);
 }
 
-.logo {
-    height: 80px;
-}
 header, footer {
     background-color: var(--clr-primary);
+}
+.logo {
+    height: 60px;
 }
 .restaurant-hero-img {
     height: 350px;
@@ -56,12 +56,13 @@ header, footer {
 .header-logo-title {
     /* font-size: var(--fs-text-lg); */
 }
+.restaurant-logo {
+    height: 120px;
+}
 .restaurant-logo-link {
     position: absolute;
     top: -50px;
-    left: 0;
     right: 0;
-    text-align: center;
 }
 
 .restaurant-review-summary {
@@ -71,17 +72,34 @@ header, footer {
 .restaurant-nav-bar {
     background-color: #eee;
 }
-#categoryNav {
+.restaurant-nav-bar a {
     font-weight: var(--fw-bold);
     row-gap: var(--sp-05);
+    padding: 8px 24px;
+    /* border: solid 1px var(--clr-primary-hover); */
+    border-radius: 24px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 12px;
+    /* box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px; */
 }
-#categoryNav a:hover {
-    text-decoration: underline;
+.restaurant-nav-bar a:hover {
+    background-color: #ddd;
 }
 .dishes-category-img {
+    position: relative;
     height: 180px;
     border-radius: 9px;
+    padding: var(--p-card);
 }
+.dishes-category-img h2 {
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 16px;
+}
+.dishes-category-img {
+    --overlay: rgba(0,0,0,0.3);
+}
+
 .dish-item {
     border: solid 1px #ddd;
     border-radius: 9px;
@@ -183,7 +201,7 @@ body.cart-is-empty :is(#cartTotals, #cartOptions, .order-btn, .empty-cart-btn, #
 }
 
 
-@media(max-width: 719px) {
+@media(max-width: 939px) {
     body.cart-has-items:not(.mobile-cart-active) {
         padding-bottom: 100px;
     }
@@ -196,7 +214,7 @@ body.cart-is-empty :is(#cartTotals, #cartOptions, .order-btn, .empty-cart-btn, #
     body.mobile-cart-active #cartBtnWrapper {
         display: none;
     }
-    #cart {
+        #cart {
         position: fixed;
         top: 0;
         left: 0;
@@ -204,12 +222,30 @@ body.cart-is-empty :is(#cartTotals, #cartOptions, .order-btn, .empty-cart-btn, #
         bottom: 0;
         z-index: 99;
     }
+    .restaurant-hero-img {
+        height: 280px;
+    }
     #cartItems {
         flex-grow: 1;
     }
 }
 
-@media(min-width: 720px) {
+@media(max-width: 719px) {
+    .restaurant-hero-img {
+        height: 240px;
+    }
+    .restaurant-logo {
+        height: 96px;
+    }
+}
+@media(max-width: 511px) {
+    .restaurant-logo {
+        height: 72px;
+    }
+}
+
+
+@media(min-width: 940px) {
     #cartBtnWrapper {
         display: none;
     }

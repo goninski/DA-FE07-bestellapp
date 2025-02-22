@@ -43,6 +43,7 @@
     }
 }
 
+
 /*** LAYOUT */
 * {
     box-sizing: border-box;
@@ -103,7 +104,7 @@ footer {
     line-height: 1.2;
     margin-bottom: var(--sp-05);
 }
-a, button {
+a, button, .btn {
     color: var(--clr-text);
     text-decoration: none;
     transition-duration: 350ms;

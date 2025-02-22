@@ -25,10 +25,12 @@
             <div class="restaurant-wrapper flex-col">
                 <section class="restaurant-header seamless">
                     <div class="restaurant-hero-img bg-img-cover"></div>
-                    <div class="restaurant-hero-text i-sec flex-col pos-relative py-30">
-                        <a href="#" class="restaurant-logo-link"><img src="assets/img/logo-pizzeria-gentile.webp" alt="logo" class="logo"></a>
-                        <h1 class="restaurant-logo-title">Pizzeria Gentile</h1>
-                        <div class="restaurant-review-summary">Bewertung 4.2 von 5 Sternen</h1>
+                    <div class="section seamless-y flex-col">
+                        <div class="restaurant-hero-text i-sec flex-col pos-relative py-30">
+                            <a href="#" class="restaurant-logo-link"><img src="assets/img/logo-pizzeria-gentile.webp" alt="logo" class="restaurant-logo"></a>
+                            <h1 class="restaurant-logo-title">Pizzeria Gentile</h1>
+                            <div class="restaurant-review-summary">Bewertung 4.2 von 5 Sternen</h1>
+                        </div>
                     </div>
                 </section>
                 <section class="restaurant-nav-bar seamless-y py-10">
@@ -37,15 +39,11 @@
             </div>
 
             <div id="dishesWrapper" class="flex-col">
-                <section id="pizza" class="dishes-category-wrapper seamless">
-                    <div class="i-sec flex-col gap py-20">
-                        <div class="dishes-category-img bg-img-cover pos-relative" style="background-image: url(assets/img/pizza.jpg)">
-                            <h2 id="catTitle_pizza">Name</h2>
-                        </div>
-                        <div id="dishItems_pizza" class="flex-col gap-05"></div>
-                    </div>
-                </section>
             </div>
+
+            <section class="restaurant-nav-bar seamless-y py-10">
+                <nav id="categoryNavFooter" class="i-sec flex-row flex-wrap gap"></nav>
+            </section>
         </main>
 
         <div id="cart" class="cart flex-col" data-items="0">
@@ -53,7 +51,7 @@
                 <button id="closeCartBtn" onclick="closeCart()"><img src="assets/icons/google-close.svg" alt="close-icon"></button>
                 <h2 class="mb-05 text-center">Warenkorb</h3>
             </div>
-            <div id="cartEmpty" class="mb-30 text-center">Der Warenkorb ist leer</div>
+            <div id="cartEmpty" class="mt-30 text-center">Der Warenkorb ist leer</div>
             <div id="orderConfirmation" class="order-confirmation flex-col text-center mt-20" style="display: none;">
                 <b>Vielen Dank</b></br>
                 Wir haben deine Testbestellung erhalten.

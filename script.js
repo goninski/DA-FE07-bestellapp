@@ -28,19 +28,16 @@ function init() {
 function renderDishesPerCategory() {
     for (let catIndex = 0; catIndex < categories.length; catIndex++) {
         let category = categories[catIndex].id;
-        let filtDishes = dishes.filter((dish) => {
+        let catName = categories[catIndex].name;
+        let catURL = categories[catIndex].url;
+            let filtDishes = dishes.filter((dish) => {
             return dish.category == category;
         });
-        renderCategoryMetas(catIndex, category);
+        document.getElementById('categoryNav').innerHTML += getCategoryNavTemplate(catName, catURL);
+        document.getElementById('categoryNavFooter').innerHTML += getCategoryNavTemplate(catName, catURL);
+        document.getElementById('dishesWrapper').innerHTML += getDishesTemplate(category, catName, catURL);
         renderDishItems(filtDishes, category);
     }
-}
-
-function renderCategoryMetas(catIndex, category) {
-    let catName = categories[catIndex].name;
-    let catURL = categories[catIndex].url;
-    document.getElementById('categoryNav').innerHTML += getCategoryNavTemplate(catName, catURL);
-    document.getElementById('catTitle_' + category).innerHTML = catName;
 }
 
 function renderDishItems(filtDishes, category) {
@@ -51,7 +48,7 @@ function renderDishItems(filtDishes, category) {
         dishName = filtDishes[dishIndex].name;
         dishDescription = filtDishes[dishIndex].description;
         dishPrice = filtDishes[dishIndex].price.toFixed(2);
-        dishItemsRef.innerHTML += getDishesTemplate();       
+        dishItemsRef.innerHTML += getDishItemsTemplate();       
     }
 }
 
@@ -209,8 +206,8 @@ function updateCartTotals(cartItems) {
 
 function checkCartItemQtyRange(dishIndex, cartItemQty) {
     switch(true) {
-        case cartItemQty > 99:
-            cartItemQty = 99;
+        case cartItemQty > 20:
+            cartItemQty = 20;
             break;
         case cartItemQty <= 0:
             cartItemQty = 1;

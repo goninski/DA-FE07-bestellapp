@@ -241,12 +241,19 @@
     position: relative;
 }
 
+.overlay-before:before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background-color: var(--overlay);
+}
+
 
 
 /*** BREAKPOINTS */
 
 @media(max-width: 719px) {
-    .flex-row {
+    .flex-wrap--ss-mob {
         flex-wrap: wrap;
     }
 }

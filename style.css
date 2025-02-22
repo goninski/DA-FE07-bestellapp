@@ -35,6 +35,7 @@
     --fw-hd: var(--fw-bold);
 
     --clr-primary: hsl(39, 100%, 50%);
+    --clr-primary-light: hsl(39, 100%, 75%);
     --clr-primary-hover: hsl(39, 100%, 65%);
     --clr-text: black;
     --clr-hd: black;
@@ -43,18 +44,26 @@
     --clr-button-hover: var(--clr-primary-hover);
 }
 
-header, footer {
+header {
     background-color: var(--clr-primary);
+}
+footer {
+    background-color:black;
+    color: var(--clr-primary);
+}
+footer a {
+    color: var(--clr-primary-hover);
 }
 .logo {
     height: 60px;
 }
+nav .burger-nav {
+    height: 36px;
+    cursor: pointer;
+}
 .restaurant-hero-img {
     height: 350px;
     background-image: url(assets/img/header-hero.jpg);
-}
-.header-logo-title {
-    /* font-size: var(--fs-text-lg); */
 }
 .restaurant-logo {
     height: 120px;
@@ -64,42 +73,41 @@ header, footer {
     top: -50px;
     right: 0;
 }
-
 .restaurant-review-summary {
     color: var(--clr-primary);
     font-weight: var(--fw-bold);
 }
 .restaurant-nav-bar {
-    background-color: #eee;
+    background-color: var(--clr-primary-light);
+    /* background-color: #eee; */
 }
 .restaurant-nav-bar a {
     font-weight: var(--fw-bold);
     row-gap: var(--sp-05);
-    padding: 8px 24px;
-    /* border: solid 1px var(--clr-primary-hover); */
+    padding: 10px 32px 8px;
     border-radius: 24px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 12px;
-    /* box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px; */
+    background-color: var(--clr-primary);
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 12px; */
 }
 .restaurant-nav-bar a:hover {
-    background-color: #ddd;
+    background-color: var(--clr-primary-hover);
 }
 .dishes-category-img {
     position: relative;
     height: 180px;
     border-radius: 9px;
     padding: var(--p-card);
+    overflow: hidden;
 }
 .dishes-category-img h2 {
     color: white;
-    font-size: 2rem;
+    font-size: 2.25rem;
     position: absolute;
     bottom: 16px;
 }
 .dishes-category-img {
     --overlay: rgba(0,0,0,0.3);
 }
-
 .dish-item {
     border: solid 1px #ddd;
     border-radius: 9px;
@@ -109,7 +117,6 @@ header, footer {
 .dish-item:hover {
     background-color: #eee;
 }
-
 .btn-add-to-cart {
     position: absolute;
     top: 8px;
@@ -124,13 +131,15 @@ header, footer {
 }
 
 .cart {
-    background-color: hsl(39, 100%, 95%);
-    min-width: 320px;
+    background-color: #f2f2f2;
     position: sticky;
     top: 0;
     max-height: 100svh;
     padding: 24px 20px 24px 24px;
     --border-color: var(--clr-primary);
+    --cart-width: 320px;
+    min-width: var(--cart-width);
+    max-width: var(--cart-width);
 }
 body.cart-is-empty :is(#cartTotals, #cartOptions, .order-btn, .empty-cart-btn, #cartBtnWrapper) {
     display: none !important;
@@ -138,7 +147,6 @@ body.cart-is-empty :is(#cartTotals, #cartOptions, .order-btn, .empty-cart-btn, #
 .cart-header {
     border-bottom: solid 1px var(--border-color);
 }
-
 #cartItems {
     overflow: auto;
     scrollbar-width: thin;
@@ -191,13 +199,11 @@ body.cart-is-empty :is(#cartTotals, #cartOptions, .order-btn, .empty-cart-btn, #
 
 #cartBtnWrapper {
     position: fixed;
-    background-color: white;
-    background-color: black;
+    background-color: var(--clr-primary);
     left: 0;
     right: 0;
     bottom: 0;
     height: 100px;
-    /* box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.4) inset; */
 }
 
 
@@ -224,6 +230,9 @@ body.cart-is-empty :is(#cartTotals, #cartOptions, .order-btn, .empty-cart-btn, #
     }
     .restaurant-hero-img {
         height: 280px;
+    }
+    #cart {
+        --cart-width: 100%;
     }
     #cartItems {
         flex-grow: 1;

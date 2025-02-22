@@ -31,7 +31,7 @@ function getDishItemsTemplate() {
 
 function getOpenCartBtnTemplate(itemQty) {
     return `
-        Warenkorb&emsp;|&emsp;${cartTotalStr}
+        Warenkorb&emsp;|&emsp;${cartTotalStr} €
     `;
 }
 

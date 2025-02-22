@@ -1,3 +1,9 @@
+function getCategoryNavTemplate(catName, catURL) {
+    return `
+        <a href="${catURL}">${catName}</a>
+    `;
+}
+
 function getDishesTemplate() {
     return `
         <div class="dish-item flex-col gap-05 pos-relative">
@@ -9,18 +15,26 @@ function getDishesTemplate() {
     `;
 }
 
+function getOpenCartBtnTemplate(itemQty) {
+    return `
+        Warenkorb&emsp;|&emsp;${cartTotalStr}
+    `;
+}
+
 function getCartItemsTemplate(cartItemIndex) {
     return `
-        <div id="cartItem-${cartItemIndex}" class="cart-item mb">
+        <div id="cartItem-${cartItemIndex}" class="cart-item">
             <h4 class="cart-item-name">${cartItemName}</h4>
-            <div class="cart-item-metas flex-row gap-10 justify-between mt-05">
-                <div class="cart-items-qty flex-row gap-10">
+            <div class="cart-item-metas flex-row gap-15 justify-between">
+                <div class="cart-item-qty-wrapper flex-row">
                     <button class="cart-btn-qty" onclick="updateCartItemQty(-1, ${cartItemIndex})">-</button>
                     <div id="cartItemQty-${cartItemIndex}" class="cart-item-qty">${cartItemQty}</div>
                     <button class="cart-btn-qty" onclick="updateCartItemQty(1, ${cartItemIndex})">+</button>
                 </div>
-                <div id="cartItemPriceTotal-${cartItemIndex}" class="cart-item-price-total">${cartItemPriceTotStr} €</div>
-                <button class="cart-btn-remove" onclick="removeFromCart(${cartItemIndex})"><img src="assets/icons/google-delete.svg" alt="trash-icon"></button>
+                <div class="cart-item-price-wrapper flex-row gap-30">
+                    <div id="cartItemPriceTotal-${cartItemIndex}" class="cart-item-price-total">${cartItemPriceTotStr} €</div>
+                    <button class="cart-btn-remove" onclick="removeFromCart(${cartItemIndex})"><img src="assets/icons/google-delete.svg" alt="trash-icon"></button>
+                </div>
             </div>
         </div>
     `;

@@ -103,10 +103,10 @@ footer {
     line-height: 1.2;
     margin-bottom: var(--sp-05);
 }
-a {
+a, button {
     color: var(--clr-text);
     text-decoration: none;
-    transition-duration: 125ms;
+    transition-duration: 350ms;
 }
 :where(button) {
     background-color: unset;

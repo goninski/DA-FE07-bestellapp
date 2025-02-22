@@ -1,0 +1,38 @@
+.btn {
+    padding: 14px 24px;
+    border-radius: 24px;
+    font-family: var(--ff);
+    font-weight: var(--fw-bold);
+    background-color: var(--clr-button);
+}
+.btn:hover {
+    background-color: var(--clr-button-hover);
+}
+.empty-cart-btn {
+    --clr-button: #ddd;
+    --clr-button-hover: #ccc;
+    font-weight: normal;
+}
+
+#openCartBtn {
+    font-size: 16px;
+}
+
+#openCartBtn[disabled] {
+    color: #444;
+    font-weight: normal;
+    --clr-button-hover: var(--clr-button);
+    cursor: auto;
+}
+
+#closeCartBtn {
+    position: fixed;
+    top: 8px;
+    right: 8px;
+    padding: 6px;
+    transition-duration: 350ms;
+    border-radius: 999rem;
+}
+#closeCartBtn:hover {
+    background-color: var(--clr-primary);
+}

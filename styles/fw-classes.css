@@ -137,6 +137,10 @@
     padding-top: var(--sp-20);
     padding-bottom: var(--sp-20);
 }
+.py-30 {
+    padding-top: var(--sp-30);
+    padding-bottom: var(--sp-30);
+}
 
 /*** MARGIN */
 .my-auto {
@@ -195,6 +199,12 @@
 }
 .gap-20 {
     gap: var(--sp-20);
+}
+.gap-30 {
+    gap: var(--sp-30);
+}
+.gap-40 {
+    gap: var(--sp-40);
 }
 
 /*** COL GAP */

@@ -62,7 +62,7 @@ function renderCart() {
         closeCart(orderSubmitted);
     }
     renderCartItems();    
-    renderCartTotals();    
+    renderCartTotals();
 }
 
 function renderCartItems() {
@@ -216,4 +216,6 @@ function checkCartItemQtyRange(dishIndex, cartItemQty) {
     return dishes[dishIndex].cartQty = cartItemQty;
 }
 
-
+function refreshPage() {
+    location.reload();
+}

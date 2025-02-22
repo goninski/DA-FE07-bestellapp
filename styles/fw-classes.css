@@ -113,13 +113,16 @@
     padding-right: var(--px-sec);
 }
 .py-sec {
-    padding: var(--py-sec) var(--py-sec);
+    padding-top: var(--py-sec);
+    padding-bottom: var(--py-sec);
 }
 .py-sec-sm {
-    padding: var(--py-sec-sm) var(--py-sec-sm);
+    padding-top: var(--py-sec-sm);
+    padding-bottom: var(--py-sec-sm);
 }
 .py-sec-xs {
-    padding: var(--py-sec-xs) var(--py-sec-xs);
+    padding-top: var(--py-sec-xs);
+    padding-bottom: var(--py-sec-xs);
 }
 .py {
     padding-top: var(--sp-10);

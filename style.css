@@ -34,14 +34,16 @@
     --fw-text: var(--fw-regular);
     --fw-hd: var(--fw-bold);
 
-    --clr-primary: hsl(39, 100%, 50%);
-    --clr-primary-light: hsl(39, 100%, 75%);
-    --clr-primary-hover: hsl(39, 100%, 65%);
     --clr-text: black;
     --clr-hd: black;
     --bg-page: white;
-    --clr-button: var(--clr-primary);
-    --clr-button-hover: var(--clr-primary-hover);
+    --clr-primary: hsl(39, 100%, 50%);
+    --clr-primary-light: hsl(39, 100%, 75%);
+    --clr-primary-hover: hsl(39, 100%, 65%);
+    --clr-secondary: hsla(141, 56%, 47%, 0.6);
+    --clr-secondary-light: hsla(141, 56%, 47%, 0.3);
+    --clr-button: var(--clr-primary-hover);
+    --clr-button-hover: var(--clr-primary);
 }
 
 header {
@@ -52,7 +54,7 @@ footer {
     color: var(--clr-primary);
 }
 footer a {
-    color: var(--clr-primary-hover);
+    color: #ddd;
 }
 .logo {
     height: 60px;
@@ -79,18 +81,17 @@ nav .burger-nav {
 }
 .restaurant-nav-bar {
     background-color: var(--clr-primary-light);
-    /* background-color: #eee; */
 }
 .restaurant-nav-bar a {
     font-weight: var(--fw-bold);
     row-gap: var(--sp-05);
     padding: 10px 32px 8px;
     border-radius: 24px;
-    background-color: var(--clr-primary);
-    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 12px; */
+    background-color: var(--clr-secondary-light);
 }
 .restaurant-nav-bar a:hover {
-    background-color: var(--clr-primary-hover);
+    /* background-color: var(--clr-primary-hover); */
+    background-color: var(--clr-secondary);
 }
 .dishes-category-img {
     position: relative;
@@ -117,13 +118,17 @@ nav .burger-nav {
 .dish-item:hover {
     background-color: #eee;
 }
+.dish-title {
+    padding-right: 48px;
+}
 .btn-add-to-cart {
     position: absolute;
-    top: 8px;
-    right: 8px;
+    top: 12px;
+    right: 12px;
     border-radius: 999rem;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
     background-color: var(--clr-button-hover);
 }
 .btn-add-to-cart:hover {
@@ -132,6 +137,7 @@ nav .burger-nav {
 
 .cart {
     background-color: #f2f2f2;
+    background-color: hsl(66, 45%, 75%);
     position: sticky;
     top: 0;
     max-height: 100svh;
@@ -199,7 +205,7 @@ body.cart-is-empty :is(#cartTotals, #cartOptions, .order-btn, .empty-cart-btn, #
 
 #cartBtnWrapper {
     position: fixed;
-    background-color: var(--clr-primary);
+    background-color: hsl(66, 45%, 75%);
     left: 0;
     right: 0;
     bottom: 0;

@@ -14,11 +14,17 @@
     font-weight: normal;
 }
 
+.order-btn {
+    font-size: 14px;
+}
 #openCartBtn {
     font-size: 16px;
     color: var(--clr-primary);
     --clr-button: black;
-    --clr-button-hover: black;
+    --clr-button-hover: #444;
+}
+#openCartBtn:hover {
+    /* color: black; */
 }
 
 #openCartBtn[disabled] {

@@ -13,5 +13,6 @@ Features:
 - order button with order confirmation
 - responsiv cart with fixed cart button
 
-Missing Feature:
+
+Missing (optional) Feature:
 - draggable dish category nav slider

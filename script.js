@@ -225,13 +225,12 @@ function setHomeURL() {
 }
 
 function setCondHomeURL(url) {
-    switch(url.hostname) {
-        case "127.0.0.1":
-            return url.origin + '/' + url.pathname.split("/")[1];
-        case "francois-gonin.developerakademie.net":
-            return url.origin + '/' + url.pathname.split("/")[1] + '/' + url.pathname.split("/")[2];
-        default:
-            return '/';
+    if(url.hostname == "127.0.0.1") {
+        return url.origin + '/' + url.pathname.split("/")[1];
     }
+    if(url.pathname.split("/")[1] == "projekte") {
+        return url.origin + '/' + url.pathname.split("/")[1] + '/' + url.pathname.split("/")[2];
+    }
+    return '/';
 }
 

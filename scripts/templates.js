@@ -40,9 +40,9 @@ function getCartItemsTemplate(cartItemIndex) {
             <h4 class="cart-item-name">${cartItemName}</h4>
             <div class="cart-item-metas flex-row gap-15 justify-between">
                 <div class="cart-item-qty-wrapper flex-row">
-                    <button class="cart-btn-qty" onclick="updateCartItemQty(-1, ${cartItemIndex})">-</button>
+                    <button class="cart-btn-qty" onclick="updateCartItemQty(-1, ${cartItemIndex})"><img src="assets/icons/google-remove.svg" alt="remove-icon"></button>
                     <div id="cartItemQty-${cartItemIndex}" class="cart-item-qty">${cartItemQty}</div>
-                    <button class="cart-btn-qty" onclick="updateCartItemQty(1, ${cartItemIndex})">+</button>
+                    <button class="cart-btn-qty" onclick="updateCartItemQty(1, ${cartItemIndex})"><img src="assets/icons/google-add.svg" alt="add-icon"></button>
                 </div>
                 <div class="cart-item-price-wrapper flex-row gap-30">
                     <div id="cartItemPriceTotal-${cartItemIndex}" class="cart-item-price-total">${cartItemPriceTotStr} €</div>

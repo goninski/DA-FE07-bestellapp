@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
     <title>Title</title>
     <link rel="stylesheet" href="style.css">
     <script src="scripts/data.js"></script>
@@ -50,15 +51,15 @@
         <div id="cart" class="cart flex-col" data-items="0">
             <div class="cart-header flex-col pos-relative">
                 <button id="closeCartBtn" onclick="closeCart()"><img src="assets/icons/google-close.svg" alt="close-icon"></button>
-                <h2 class="mb-05 text-center">Warenkorb</h3>
+                <h2 class="mb-10 text-center">Warenkorb</h3>
             </div>
             <div id="cartEmpty" class="mt-30 text-center">Dein Warenkorb ist noch leer</br></br>Füge dein gewünschtes Essen hinzu und bestelle per Klick</div>
             <div id="orderConfirmation" class="order-confirmation flex-col text-center mt-20" style="display: none;">
                 <b>Vielen Dank</b></br>
                 Wir haben deine Testbestellung erhalten.
             </div>            
-    <div id="cartItems" class="flex-col mt-10 py-10"></div>
-        <div class="cart-footer flex-col mt">
+            <div id="cartItems" class="flex-col mt-10 py-10"></div>
+            <div class="cart-footer flex-col mt">
                 <div id="cartTotals" class="flex-col gap-05 py-10"></div>
                 <div id="cartOptions"> 
                     <input id="inputPickUp" name="inputPickUp" type="checkbox" onclick="togglePickUp()"/>
@@ -68,13 +69,12 @@
                 <button class="empty-cart-btn btn btn mt-05" onclick="emptyCart()">Warenkorb leeren</button>
             </div>
         </div>
-
     </div>
 
     <footer class="section py-sec-sm">
         <div class="flex-col">
             <a href="./"><img src="assets/icons/logo/logo.svg" alt="logo" class="logo"></a>
-            Feb 2025 | Abschlussprojekt Modul 7 (in progress)</br>DA Frontend Masterclass
+            Feb 2025 | Abschlussprojekt Modul 7</br>DA Frontend Masterclass
             <div class="footer-links flex-row gap align-center mt-05">
                 <a href="https://github.com/goninski/" target="_blank">visit on GitHub</a>
                 <a href="/">Projects</a>

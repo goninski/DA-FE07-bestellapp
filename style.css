@@ -1,4 +1,4 @@
-@import url("assets/fonts/fonts.css");
+@import url("assets/fonts/open-sans/fonts.css");
 @import url("styles/fw-presets.css");
 @import url("styles/fw-classes.css");
 @import url("styles/assets.css");
@@ -14,7 +14,7 @@
     --py-sec-xs: 20px;
     --p-card: 16px;
 
-    --ff-text: "Raleway";
+    --ff-text: "Open Sans", serif;
     --ff-hd: var(--ff-text);
 
     --fs-text: 16px;
@@ -41,6 +41,7 @@
     --clr-primary-light: hsl(39, 100%, 60%);
     --clr-secondary: hsl(66, 45%, 75%);
     --clr-secondary-light: hsl(66, 45%, 85%);
+    --clr-secondary-u-light: hsl(66, 45%, 92.5%);
     --clr-button: var(--clr-primary-light);
     --clr-button-hover: var(--clr-primary);
 }
@@ -54,6 +55,10 @@ footer {
 }
 footer a {
     color: #ddd;
+    font-size: var(--fs-text-sm);
+}
+footer a:hover {
+    color: white;
 }
 main {
     overflow: hidden;
@@ -130,6 +135,13 @@ nav .burger-nav {
 .dish-title {
     padding-right: 48px;
 }
+.dish-price {
+    font-weight: var(--fw-bold);
+    color: var(--clr-primary);
+}
+.dish-description {
+    font-size: var(--fs-text-sm);
+}
 .btn-add-to-cart {
     position: absolute;
     top: 12px;
@@ -156,7 +168,7 @@ nav .burger-nav {
 
 .cart {
     background-color: #f2f2f2;
-    background-color: var(--clr-secondary-light);
+    background-color: var(--clr-secondary-u-light);
     position: sticky;
     top: 0;
     max-height: 100svh;
@@ -184,27 +196,27 @@ body.cart-is-empty :is(#cartTotals, #cartOptions, .order-btn, .empty-cart-btn, #
 }
 .cart-item-qty-wrapper {
     font-weight: var(--fw-bold);
-    font-size: 20px;
+    font-size: 18px;
     gap: 18px;
 }
 .cart-item-qty {
-    margin-top: -4px;
 }
 .cart-btn-qty {
-    /* padding-top: 8px; */
+    padding: 3px;
     font-weight: var(--fw-bold);
     font-size: 20px;
     transition-duration: 350ms;
     border-radius: 999rem;
-    min-width: 24px;
+    /* min-width: 24px; */
 }
 .cart-btn-qty:hover {
     background-color: #ddd;
 }
 .cart-btn-remove {
+    margin-top: -8px;
     margin-left: -24px;
     padding: 4px 12px;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 .cart-btn-remove img {
     height: 18px;
@@ -270,6 +282,9 @@ body.cart-is-empty :is(#cartTotals, #cartOptions, .order-btn, .empty-cart-btn, #
     .category-nav {
         column-gap: var(--sp-05);
         font-size: 12px;
+    }
+    .btn-add-to-cart {
+        font-size: 16px;
     }
 }
 @media(max-width: 359px) {

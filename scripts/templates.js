@@ -1,9 +1,8 @@
 function getCategoryNavTemplate(catName, catURL) {
     return `
-        <a href="#${catURL}">${catName}</a>
+        <a href="#${catURL}" class="category-nav-link">${catName}</a>
     `;
 }
-
 
 function getDishesTemplate(category, catName, catURL) {
     return `

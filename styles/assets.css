@@ -20,11 +20,12 @@
 #openCartBtn {
     font-size: 16px;
     color: var(--clr-primary);
-    --clr-button: black;
-    --clr-button-hover: #444;
+    color: black;
+    --clr-button: var(--clr-primary);
+    --clr-button-hover: var(--clr-primary-light);
 }
 #openCartBtn:hover {
-    /* color: black; */
+    color: black;
 }
 
 #openCartBtn[disabled] {

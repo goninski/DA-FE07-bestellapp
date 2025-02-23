@@ -1,7 +1,6 @@
 @import url("assets/fonts/fonts.css");
 @import url("styles/fw-presets.css");
 @import url("styles/fw-classes.css");
-/*@import url("node_modules\bootstrap\dist\css\bootstrap.min.css");*/
 @import url("styles/assets.css");
 
 
@@ -38,11 +37,11 @@
     --clr-hd: black;
     --bg-page: white;
     --clr-primary: hsl(39, 100%, 50%);
-    --clr-primary-light: hsl(39, 100%, 75%);
-    --clr-primary-hover: hsl(39, 100%, 65%);
-    --clr-secondary: hsla(141, 56%, 47%, 0.6);
-    --clr-secondary-light: hsla(141, 56%, 47%, 0.3);
-    --clr-button: var(--clr-primary-hover);
+    --clr-primary-lighter: hsl(39, 100%, 75%);
+    --clr-primary-light: hsl(39, 100%, 60%);
+    --clr-secondary: hsl(66, 45%, 75%);
+    --clr-secondary-light: hsl(66, 45%, 85%);
+    --clr-button: var(--clr-primary-light);
     --clr-button-hover: var(--clr-primary);
 }
 
@@ -55,6 +54,9 @@ footer {
 }
 footer a {
     color: #ddd;
+}
+main {
+    overflow: hidden;
 }
 .logo {
     height: 60px;
@@ -80,18 +82,25 @@ nav .burger-nav {
     font-weight: var(--fw-bold);
 }
 .restaurant-nav-bar {
-    background-color: var(--clr-primary-light);
+    background-color: var(--clr-primary-lighter);
+    /* overflow-x: auto;
+    scrollbar-width: thin; */
 }
-.restaurant-nav-bar a {
+.category-nav {
+    flex-wrap: wrap;
+    row-gap: var(--sp-05);
+}
+.category-nav-link {
     font-weight: var(--fw-bold);
     row-gap: var(--sp-05);
-    padding: 10px 32px 8px;
+    padding: 10px 24px 8px;
     border-radius: 24px;
-    background-color: var(--clr-secondary-light);
-}
-.restaurant-nav-bar a:hover {
-    /* background-color: var(--clr-primary-hover); */
     background-color: var(--clr-secondary);
+    white-space: nowrap;
+    /* pointer-events: none; */
+}
+.category-nav-link:hover {
+    background-color: var(--clr-secondary-light);
 }
 .dishes-category-img {
     position: relative;
@@ -135,9 +144,19 @@ nav .burger-nav {
     background-color: var(--clr-button);
 }
 
+
+#cartBtnWrapper {
+    position: fixed;
+    background-color: var(--clr-secondary);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100px;
+}
+
 .cart {
     background-color: #f2f2f2;
-    background-color: hsl(66, 45%, 75%);
+    background-color: var(--clr-secondary-light);
     position: sticky;
     top: 0;
     max-height: 100svh;
@@ -203,15 +222,6 @@ body.cart-is-empty :is(#cartTotals, #cartOptions, .order-btn, .empty-cart-btn, #
     padding-top: 16px;
 }
 
-#cartBtnWrapper {
-    position: fixed;
-    background-color: hsl(66, 45%, 75%);
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100px;
-}
-
 
 @media(max-width: 939px) {
     body.cart-has-items:not(.mobile-cart-active) {
@@ -256,6 +266,15 @@ body.cart-is-empty :is(#cartTotals, #cartOptions, .order-btn, .empty-cart-btn, #
 @media(max-width: 511px) {
     .restaurant-logo {
         height: 72px;
+    }
+    .category-nav {
+        column-gap: var(--sp-05);
+        font-size: 12px;
+    }
+}
+@media(max-width: 359px) {
+    .category-nav-link {
+        padding: 10px 20px 8px;
     }
 }
 

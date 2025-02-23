@@ -13,7 +13,7 @@ let categories = [
         "id": "dessert",
         "name": "Desserts",
         "url": "desserts",
-    }
+    },
 ];
 
 let dishes = [

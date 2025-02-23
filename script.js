@@ -23,6 +23,7 @@ function init() {
     closeCart();
     renderDishesPerCategory();
     renderCart();
+    setHomeURL();
 }
 
 function renderDishesPerCategory() {
@@ -30,9 +31,7 @@ function renderDishesPerCategory() {
         let category = categories[catIndex].id;
         let catName = categories[catIndex].name;
         let catURL = categories[catIndex].url;
-            let filtDishes = dishes.filter((dish) => {
-            return dish.category == category;
-        });
+        let filtDishes = dishes.filter((dish) => {return dish.category == category;});
         document.getElementById('categoryNav').innerHTML += getCategoryNavTemplate(catName, catURL);
         document.getElementById('categoryNavFooter').innerHTML += getCategoryNavTemplate(catName, catURL);
         document.getElementById('dishesWrapper').innerHTML += getDishesTemplate(category, catName, catURL);
@@ -216,6 +215,22 @@ function checkCartItemQtyRange(dishIndex, cartItemQty) {
     return dishes[dishIndex].cartQty = cartItemQty;
 }
 
-function refreshPage() {
-    location.reload();
+
+function setHomeURL() {
+    let url = new URL(window.location.href);
+    let homeURL = url;
+    console.log(url.hostname);
+    switch(url.hostname) {
+        case "127.0.0.1":
+            homeURL = url.origin + '/' + url.pathname.split("/")[1];
+            break
+        case "francois-gonin.developerakademie.net":
+            homeURL = url.origin + '/' + url.pathname.split("/")[1] + '/' + url.pathname.split("/")[2];
+            break
+        default:
+            homeURL = '/';
+    }
+    let homeLink = document.querySelector('.js-set-home-url');
+    homeLink.href = homeURL;
 }
+

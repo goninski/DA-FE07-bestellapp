@@ -217,17 +217,21 @@ function checkCartItemQtyRange(dishIndex, cartItemQty) {
 
 function setHomeURL() {
     let url = new URL(window.location.href);
-    let homeURL = url;
+    let homeURL = setCondHomeURL(url);
+    let homeLinksRef = document.querySelectorAll('.js-set-home-url');
+    for (let i=0; i < homeLinksRef.length; i++) {
+        homeLinksRef[i].href = homeURL;
+    }
+}
+
+function setCondHomeURL(url) {
     switch(url.hostname) {
         case "127.0.0.1":
-            homeURL = url.origin + '/' + url.pathname.split("/")[1];
-            break
+            return url.origin + '/' + url.pathname.split("/")[1];
         case "francois-gonin.developerakademie.net":
-            homeURL = url.origin + '/' + url.pathname.split("/")[1] + '/' + url.pathname.split("/")[2];
-            break
+            return url.origin + '/' + url.pathname.split("/")[1] + '/' + url.pathname.split("/")[2];
         default:
-            homeURL = '/';
+            return '/';
     }
-    document.querySelector('.js-set-home-url').href = homeURL;
 }
 
